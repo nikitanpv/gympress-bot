@@ -2,9 +2,12 @@
 
 import openai
 import langdetect
-from config import OPENAI_API_KEY
+import os
+from dotenv import load_dotenv
 
-openai.api_key = OPENAI_API_KEY
+load_dotenv()
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 async def generate_workout(user_input: str, last_workout: str = "") -> str:
     # Определяем язык запроса
