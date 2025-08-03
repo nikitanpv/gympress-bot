@@ -1,0 +1,12 @@
+[Unit]
+Description=GymGPT Telegram Bot
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/gymgpt-bot
+ExecStart=/root/gymgpt-bot/venv/bin/python /root/gymgpt-bot/bot.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
