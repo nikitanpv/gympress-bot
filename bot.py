@@ -2,8 +2,13 @@
 
 from telegram.ext import ApplicationBuilder, MessageHandler, CommandHandler, ContextTypes, filters
 from telegram import Update
-from config import TELEGRAM_TOKEN
 from ai_core import generate_workout
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 # Приветствие
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
